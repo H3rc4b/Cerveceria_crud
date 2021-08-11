@@ -45,67 +45,34 @@
         <div class="col-md-5 offset-md-2 py-3">
             <h2>Novedades</h2>
             <ul class="lista-novedades">
+                {{#each novedades}}
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#nuevasrecetas"><img src="images/novedades01.jpg"
-                            alt="">Nuevas recetas</a>
+                    <a href="#" data-toggle="modal" data-target="#modal{{id}}"><img src="images/novedades01.jpg">{{titulo}}</a>
                 </li>
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#estilosdemaltas"><img src="images/novedades01.jpg"
-                            alt="">Estilos de maltas</a>
-                </li>
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#nuevasrecetas"><img src="images/novedades01.jpg"
-                            alt="">Lupulos nacionales</a>
-                </li>
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#nuevasrecetas"><img src="images/novedades01.jpg"
-                            alt="">Lupulos Importados</a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/novedades01.jpg" alt="">Nuevas recetas</a>
-                </li>
+                {{/each}}
             </ul>
         </div>
+         {{#each novedades}}
         <!--abro modal -->
-        <div class="modal fade" id="nuevasrecetas" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="modal{{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Nuevas recetas</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">{{titulo}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid suscipit ipsam at?
-                            Ratione eaque dolorem quo ullam at tenetur voluptatum exercitationem, temporibus ab
-                            reprehenderit, qui a? Qui accusamus animi aperiam?</p>
+                        <h4>{{subtitulo}}</h4>
+                        <p>{{cuerpo}}</p>
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="estilosdemaltas" data-backdrop="static" data-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Estilos de maltas</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p style="color: red;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-                            suscipit ipsam at?
-                            Ratione eaque dolorem quo ullam at tenetur voluptatum exercitationem, temporibus ab
-                            reprehenderit, qui a? Qui accusamus animi aperiam?</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        {{/each}}
         <!--cierro modal -->
         <div class="col-md-3">
             <!--abro testimonios -->
@@ -235,15 +202,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="email">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Tel</label>
-                    <input type="tel" class="form-control"   name="tel">
+                    <input type="tel" class="form-control" name="tel">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentarios" ></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        name="comentarios"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Enviar</button>
